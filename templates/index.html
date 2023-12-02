@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Recommender</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Car Recommender</h1>
+    <form method="POST" action="/">
+        <label for="fuel">Fuel Type (0-Petrol, 1-Diesel, 2-CNG, 3-Electric):</label>
+        <input type="text" id="fuel" name="fuel"><br><br>
+        <label for="seats">Number of Seats:</label>
+        <input type="text" id="seats" name="seats"><br><br>
+        <label for="ncap">NCAP Rating:</label>
+        <input type="text" id="ncap" name="ncap"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if tables %}
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
